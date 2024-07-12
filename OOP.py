@@ -118,39 +118,126 @@
 # ball1.intro()
 
 # ----------------------------------inheritance----------------------------
+#
+# class User:
+#     def user_connection(self):
+#         print(f"{self}logged in")
+#
+#
+# class Dragon(User):
+#     def __init__(self, name, power):
+#         self.name = name
+#         self.power = power
+#
+#     def attack(self):
+#         print(f"{self.name} fired with {self.power} damaged")
+#
+#
+# class Wizard(User):
+#     def __init__(self, name, power):
+#         self.name = name
+#         self.power = power
+#
+#     def attack(self):
+#         print(f"{self.name} spell casted with {self.power} damaged per second")
+#
+#
+# player1 = Wizard("gandolf", 33)
+# player2 = Dragon("veagar", 500)
+# player1.user_connection()
+# player1.attack()
+# player2.attack()
+#
+# # ------------isinstance--------------
+# # # we use this title when we want to know
+# # # something is inheritance of another
+# print(isinstance(player1, Wizard))
+# print(isinstance(player1, User))
+# print(isinstance(User, object))
 
-class User:
-    def user_connection(self):
-        print(f"{self}logged in")
+# ---------------------------------polymorphism-----------------------------------------
+#
+# # four pillars of OOP encapsulation abstraction inheritance polymorphism
+# class Mother:
+#     def cheking(self):
+#         print("baby was born")
+#
+#     def talk(self):
+#         print("this is the function that belong to mother")
+#
+#
+# class Boy(Mother):
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def talk(self):
+#         Mother.talk(self)
+#         print(f"hi my name is {self.name} and i am a boy")
+#
+#
+# class Girl(Mother):
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def talk(self):
+#         print(f"hi my name is {self.name} and i am a girl")
+#
+#
+# son1 = Girl("mary")
+# son2 = Boy("ahmad")
+#
+#
+# # son1.cheking()
+# # son1.talk()
+#
+#
+# # def talk_to_me(char):
+# #     char.talk()
+# #
+# #
+# # talk_to_me(son2)
+# # talk_to_me(son1)
+# #
+# # # define with for loop
+# #
+# # for char in [son1, son2]:
+# #     char.talk()
+#
+# son2.talk()
+
+# ----------------------------------super-()----------------------------------
+
+class Car:
+    def __init__(self, type):
+        self.type = type
+
+    def buy(self):
+        print("sold out")
 
 
-class Dragon(User):
-    def __init__(self, name, power):
-        self.name = name
-        self.power = power
-
-    def attack(self):
-        print(f"{self.name} fired with {self.power} damaged")
+class BMW(Car):
+    def __init__(self, color, speed, type):
+        Car.__init__(self, type)  # there is two-way to do this one is this and other is in below
+        self.color = color
+        self.speed = speed
 
 
-class Wizard(User):
-    def __init__(self, name, power):
-        self.name = name
-        self.power = power
-
-    def attack(self):
-        print(f"{self.name} spell casted with {self.power} damaged per second")
+class Benz(Car):
+    def __init__(self, color, speed, type):
+        super().__init__(type)  # the other way is this use of super()
+        self.color = color
+        self.speed = speed
 
 
-player1 = Wizard("gandolf", 33)
-player2 = Dragon("veagar", 500)
-player1.user_connection()
-player1.attack()
-player2.attack()
+car1 = BMW("red", 342, True)
+car2 = Benz("black", 299, False)
 
-# ------------isinstance--------------
-# # we use this title when we want to know
-# # something is inheritance of another
-print(isinstance(player1, Wizard))
-print(isinstance(player1, User))
-print(isinstance(User, object))
+car1.buy()
+print(car1.type)
+
+car2.buy()
+print(car2.type)
+
+# -------introspection---------
+
+print(f"all thing that access to car2 object:{dir(car2)}")
