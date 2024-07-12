@@ -207,37 +207,107 @@
 
 # ----------------------------------super-()----------------------------------
 
-class Car:
-    def __init__(self, type):
-        self.type = type
+# class Car:
+#     def __init__(self, type):
+#         self.type = type
+#
+#     def buy(self):
+#         print("sold out")
+#
+#
+# class BMW(Car):
+#     def __init__(self, color, speed, type):
+#         Car.__init__(self, type)  # there is two-way to do this one is this and other is in below
+#         self.color = color
+#         self.speed = speed
+#
+#
+# class Benz(Car):
+#     def __init__(self, color, speed, type):
+#         super().__init__(type)  # the other way is this use of super()
+#         self.color = color
+#         self.speed = speed
+#
+#
+# car1 = BMW("red", 342, True)
+# car2 = Benz("black", 299, False)
+#
+# car1.buy()
+# print(car1.type)
+#
+# car2.buy()
+# print(car2.type)
+#
+# # -------introspection---------
+#
+# print(f"all thing that access to car2 object:{dir(car2)}")
 
-    def buy(self):
-        print("sold out")
 
+# -----------------------------------dunder-methods---------------------------
 
-class BMW(Car):
-    def __init__(self, color, speed, type):
-        Car.__init__(self, type)  # there is two-way to do this one is this and other is in below
-        self.color = color
-        self.speed = speed
+# class Toy:
+#     def __init__(self, name):
+#         self.name = name
+#         self.mydict = {
+#             "age": 34,
+#             "old": True
+#         }
+#
+#     def __str__(self):  # we can change the dunder method usage
+#         return f'{self.name}'  # like this
+#
+#     def __len__(self):
+#         return 34
+#
+#     def __call__(self):
+#         return 'we called'
+#
+#     def __getitem__(self, item):
+#         return self.mydict[item]
+#
+#
+# obj1 = Toy("teddy")
+# print(obj1.__str__())  # this and below is same
+# print(str(obj1))
+# print(len(obj1))
+# print(f"we called something: '{obj1()}'")  # we can use __call__ like this
+# print(obj1["old"])  # use this syntax then we can use __getitem__
 
+# ---------------------------------exercise-------------------------------
 
-class Benz(Car):
-    def __init__(self, color, speed, type):
-        super().__init__(type)  # the other way is this use of super()
-        self.color = color
-        self.speed = speed
+# class SuperList(list):
+#     def __len__(self):
+#         return 100
+#
+#
+# list1 = SuperList()
+# list2 = SuperList()
+#
+# list1.append('apple')
+# list2.append(34)
+# list2.append(22)
+# print(len(list1))
+# print(list1)
+# print(list2)
 
+# ------------------------------------MRO------------------------------
 
-car1 = BMW("red", 342, True)
-car2 = Benz("black", 299, False)
-
-car1.buy()
-print(car1.type)
-
-car2.buy()
-print(car2.type)
-
-# -------introspection---------
-
-print(f"all thing that access to car2 object:{dir(car2)}")
+# class A:
+#     num = 2
+#
+#
+# class B(A):
+#     num = 5
+#
+#
+# class C(A):
+#     num = 8
+#
+#
+# class D(B, C):
+#     pass
+#
+#
+# print(D.num)
+# print(D.__mro__)  # we can use this key word to know which class chose to inheritance
+# print(f' second syntax of mro : {D.mro()} ')
