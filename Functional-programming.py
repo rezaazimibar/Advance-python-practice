@@ -120,3 +120,8 @@
 #
 # my_list1 = list({item for item in my_list if my_list.count(item) > 1})
 # print(my_list1)
+
+# -------------------------------extra-bit--------------------------------
+# second_list = ["d", "m"]
+# translate_list = {char for char in "hey hey Amir"}
+# print(translate_list)
