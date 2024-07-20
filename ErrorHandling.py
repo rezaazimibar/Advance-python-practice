@@ -19,21 +19,21 @@
 #
 # print(my_mixer(23, 0))
 
-# while True:
-#     try:
-#         age = int(input("say your age:"))
-#         print(10 / age)
-#         raise OverflowError("i am a value error")
-#     except ValueError:
-#         print("pleas enter the correct number")
-#
-#     except ZeroDivisionError:
-#         print("do not enter a zero as a number")
-#     except OverflowError as err:
-#         print(f"error box of over flow {err}")
-#     # else:
-#     #     print("thank you")
-#     #     break
-#     finally:
-#         print("end of code done")
-#     # print("ohhh") #never run if we use break in finally
+while True:
+    try:
+        age = int(input("say your age:"))
+        print(10 / age)
+        raise OverflowError("i am a value error")
+    except ValueError:
+        print("pleas enter the correct number")
+
+    except ZeroDivisionError:
+        print("do not enter a zero as a number")
+    except OverflowError as err:
+        print(f"error box of over flow {err}")
+    # else:
+    #     print("thank you")
+    #     break
+    finally:
+        print("end of code done")
+    # print("ohhh") #never run if we use break in finally

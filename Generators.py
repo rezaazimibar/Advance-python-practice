@@ -42,32 +42,100 @@
 # print(f"my generator is: {next(generator1)}")
 
 # ----------------------------generators-performance----------------------------
-from time import time
+# from time import time
+#
+#
+# def performance(func):
+#     def warp_func(*args, **kwargs):
+#         time1 = time()
+#         func(*args, **kwargs)
+#         time2 = time()
+#         print(f"the time is: {time2 - time1}")
+#
+#     return warp_func
+#
+#
+# @performance  # generators are faster than regular iterable
+# def my_generator(num):
+#     print("1)")
+#     for i in range(num):
+#         i * 5
+#
+#
+# @performance
+# def my_iterable(num):
+#     print("2)")
+#     for i in list(range(num)):
+#         i * 5
+#
+#
+# my_generator(100000000)
+# my_iterable(100000000)
 
+# -----------------------------------build-own-generators-iterable------------------------------
 
-def performance(func):
-    def warp_func(*args, **kwargs):
-        time1 = time()
-        func(*args, **kwargs)
-        time2 = time()
-        print(f"the time is: {time2 - time1}")
+# def special_loop(iterable):
+#     iterator = iter(iterable)
+#     while True:
+#         try:
+#             print(iterator)
+#             print(next(iterator))
+#         except StopIteration:
+#             break
+#
+#
+# special_loop([1, 2, 3, 74, 5, 6])
+#
+#
+# class MyGen:
+#
+#     def __init__(self, first, last):
+#         self.current = first
+#         self.first = first
+#         self.last = last
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         if self.current < self.last:
+#             num = self.current
+#             self.current += 1
+#             return num
+#         raise StopIteration
+#
+#
+# gen = MyGen(30, 110)
+# for i in gen:
+#     print(i)
 
-    return warp_func
+# ----------------------------------exersice---------------------------------
 
+# def my_fib(num):
+#     first = 1
+#     item = 1
+#     if num==1:
+#         print(1)
+#     else:
+#         for i in range(2, num):
+#             item = first - item
+#             first = first + item
+#
+#             print(f"empty: {i}")
+#             print(first)
+#
+#
+# my_fib(10)
 
-@performance  # generators are faster than regular iterable
-def my_generator(num):
-    print("1)")
-    for i in range(num):
-        i * 5
-
-
-@performance
-def my_iterable(num):
-    print("2)")
-    for i in list(range(num)):
-        i * 5
-
-
-my_generator(100000000)
-my_iterable(100000000)
+# def my_fib2(num):
+#     a = 0
+#     b = 1
+#     for i in range(num):
+#         yield a
+#         temp = a
+#         a = b
+#         b = b + temp
+#
+#
+# for i in my_fib2(10):
+#     print(i)
