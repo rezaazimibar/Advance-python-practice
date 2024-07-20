@@ -127,7 +127,7 @@
 #
 # my_fib(10)
 
-# def my_fib2(num):
+# def my_fib2(num):  #best way do define Fibonacci sequence
 #     a = 0
 #     b = 1
 #     for i in range(num):
@@ -139,3 +139,18 @@
 #
 # for i in my_fib2(10):
 #     print(i)
+
+# def my_fib3(num):
+#     my_array = []
+#     a = 0
+#     b = 1
+#     c = 0
+#     for i in range(num):
+#         my_array.append(a)
+#         c = b + a
+#         a = b
+#         b = c
+#     return my_array
+#
+#
+# print(my_fib3(12))
