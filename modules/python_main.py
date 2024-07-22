@@ -32,18 +32,41 @@
 
 # -------------------------------------------built-in-modules--------------------------------------
 
+# import random
+#
+# # import random as hehe # if we use it we should call hehe instead random
+# # this going to rename the module name
+#
+# # print(random)
+# # help(random)
+# # print(dir(random))  # show me all available method on this package
+#
+# print(random.random())
+# print(random.randint(23, 44))
+# print(random.choice([2, 3, 4, 5, 6, "hey"]))
+# my_list = [1, 2, 3, 4, 5, 6, 7]
+# random.shuffle(my_list)  # it shuffled my list when ever i run the code
+# print(my_list)
+
+
+# ----------------------sys----------------------
+import sys
 import random
 
-# import random as hehe # if we use it we should call hehe instead random
-# this going to rename the module name
+first = sys.argv[1]
+end = sys.argv[2]
+random_num = random.randint(int(first), int(end))
 
-# print(random)
-# help(random)
-# print(dir(random))  # show me all available method on this package
-
-print(random.random())
-print(random.randint(23, 44))
-print(random.choice([2, 3, 4, 5, 6, "hey"]))
-my_list = [1, 2, 3, 4, 5, 6, 7]
-random.shuffle(my_list)  # it shuffled my list when ever i run the code
-print(my_list)
+while True:
+    ran_num = input(f"enter the number between {first},{end}: ")
+    try:
+        if int(first) <= int(ran_num) <= int(end):
+            if int(ran_num) == random_num:
+                print("you were right")
+                break
+            else:
+                print("try again")
+        else:
+            print(f"between {first},{end}")
+    except ValueError:
+        print(f"pleas enter the correct number between {first},{end} ")
