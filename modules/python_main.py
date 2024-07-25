@@ -49,24 +49,24 @@
 # print(my_list)
 
 
+import random
 # ----------------------sys----------------------
 import sys
-import random
 
 first = sys.argv[1]
 end = sys.argv[2]
 random_num = random.randint(int(first), int(end))
 
 while True:
-    ran_num = input(f"enter the number between {first},{end}: ")
+    ran_num = input(f"enter the number between {first},{end}:")
     try:
         if int(first) <= int(ran_num) <= int(end):
             if int(ran_num) == random_num:
-                print("you were right")
+                print("correct answer")
                 break
             else:
-                print("try again")
+                print("please try again")
         else:
-            print(f"between {first},{end}")
+            print(f"choose number between {first},{end}")
     except ValueError:
-        print(f"pleas enter the correct number between {first},{end} ")
+        print(f"number error: pleas enter the number between {first},{end} ")
