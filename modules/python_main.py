@@ -49,24 +49,69 @@
 # print(my_list)
 
 
-import random
 # ----------------------sys----------------------
-import sys
+# import random
+# import sys
+#
+# first = sys.argv[1]
+# end = sys.argv[2]
+# random_num = random.randint(int(first), int(end))
+#
+# while True:
+#     ran_num = input(f"enter the number between {first},{end}:")
+#     try:
+#         if int(first) <= int(ran_num) <= int(end):
+#             if int(ran_num) == random_num:
+#                 print("correct answer")
+#                 break
+#             else:
+#                 print("please try again")
+#         else:
+#             print(f"choose number between {first},{end}")
+#     except ValueError:
+#         print(f"number error: pleas enter the number between {first},{end} ")
 
-first = sys.argv[1]
-end = sys.argv[2]
-random_num = random.randint(int(first), int(end))
+# -----------------------------------------module-install------------------------------------------
 
-while True:
-    ran_num = input(f"enter the number between {first},{end}:")
-    try:
-        if int(first) <= int(ran_num) <= int(end):
-            if int(ran_num) == random_num:
-                print("correct answer")
-                break
-            else:
-                print("please try again")
-        else:
-            print(f"choose number between {first},{end}")
-    except ValueError:
-        print(f"number error: pleas enter the number between {first},{end} ")
+# import pyjokes
+#
+# print(pyjokes.get_joke("en", "neutral"))
+
+# -----------------------------------------Useful-modules------------------------------------------
+
+# from collections import Counter, defaultdict, OrderedDict
+#
+# my_text = "hey hey my name is reza ha ha ha"
+#
+# print(Counter(my_text))
+#
+# my_dict = defaultdict(lambda: 5, {"a": "hey", "b": True})
+# print(my_dict["dd"])
+# print(my_dict["ddd"])
+# print(my_dict)
+#
+# d = OrderedDict()  # if we change the order of item the equal is false
+# # but not in regular object like d={} this going to be True
+# d['a'] = 1001
+# d['b'] = True
+#
+# d1 = OrderedDict()
+# d1['a'] = 1001
+# d1['b'] = True
+#
+# print(f"is d1 equal to d2:{d1 == d}")
+
+# ---------------data-time-module----------------
+
+# import datetime
+#
+# print(datetime.time())
+# print(datetime.time(5, 33, 22))
+# print(datetime.date.today())
+
+# ---------------------array---------------------
+
+# from array import array
+#
+# my_arr = array("i", [1, 2, 3, 4, 5, 6, 7, 8])
+# print(f"print my_arr:{my_arr[5]}")
